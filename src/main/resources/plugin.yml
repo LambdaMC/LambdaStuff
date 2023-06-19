@@ -1,7 +1,7 @@
 main: com.kryeit.LambdaStuff
 version: 1.0
 author: MuriPlz
-api-version: 1.20
+api-version: 1.18
 softdepend: [AFKPlus,GriefDefender]
 name: LambdaStuff
 commands:
