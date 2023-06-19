@@ -9,7 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Vote implements CommandExecutor {
+public class Reglas implements CommandExecutor {
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
@@ -17,9 +18,10 @@ public class Vote implements CommandExecutor {
             return false;
         }
 
-        TextComponent message = new TextComponent(Utils.color("Planet Minecraft -> &9&nhttps://www.planetminecraft.com"));
-        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.planetminecraft.com/server/kryeit-5584167/vote/"));
+        TextComponent message = new TextComponent(Utils.color("Reglas -> &9&todavia nada loco"));
+        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "hay q hacerlas, somos unos vagos"));
         player.spigot().sendMessage(message);
         return true;
     }
+
 }

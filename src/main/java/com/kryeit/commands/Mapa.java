@@ -4,12 +4,13 @@ import com.kryeit.Utils;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Forum implements CommandExecutor {
+public class Mapa implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
@@ -17,8 +18,13 @@ public class Forum implements CommandExecutor {
             return false;
         }
 
-        TextComponent message = new TextComponent(Utils.color("Forum -> &9&nhttps://forum.kryeit.com"));
-        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://forum.kryeit.com"));
+        Location l = player.getLocation();
+
+        TextComponent message = new TextComponent(Utils.color("Bluemap -> &9&nhttps://map.kryeit.com/"));
+        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL,
+                "https://map.kryeit.com/#world:" +
+                l.getBlockX() + ":" + l.getBlockY() + ":" + l.getBlockZ() + ":" + l.getYaw() + ":" + l.getPitch() +
+                ":0:0:0:perspective"));
         player.spigot().sendMessage(message);
         return true;
     }

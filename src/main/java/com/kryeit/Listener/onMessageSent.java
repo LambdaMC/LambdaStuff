@@ -1,6 +1,6 @@
 package com.kryeit.Listener;
 
-import com.kryeit.Stuff;
+import com.kryeit.LambdaStuff;
 import com.kryeit.Utils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,21 +16,21 @@ public class onMessageSent implements Listener {
         String message = e.getMessage();
         Player p = e.getPlayer();
 
-        if (message.contains("trapped") || message.contains("stuck") || message.contains("get out")) {
-            if (!Stuff.getInstance().sentTrapped.contains(p.getUniqueId())){
-                p.sendMessage(Utils.color("&bIf you can't get out of somewhere, use /trapped"));
-                Stuff.getInstance().sentTrapped.add(p.getUniqueId());
+        if (message.contains("atrapado") || message.contains("salir")) {
+            if (!LambdaStuff.getInstance().sentTrapped.contains(p.getUniqueId())){
+                p.sendMessage(Utils.color("&bSi estás atrapado en algún sitio, usa /trapped"));
+                LambdaStuff.getInstance().sentTrapped.add(p.getUniqueId());
             }
         }
 
         if(!p.hasPermission("stuff.muted") || p.isOp()) {
-            if (message.length() > 5 && message.equals(message.toUpperCase())) {
+            if (message.length() > 7 && message.equals(message.toUpperCase())) {
                 message = message.toLowerCase();
                 }
             e.setFormat(Utils.color(getColouredName(p) + "&f: ") + message);
         } else {
             e.setCancelled(true);
-            p.sendMessage("You are soft muted from the general chat.");
+            p.sendMessage("Estás baneado del chat general.");
         }
 
     }
@@ -48,10 +48,6 @@ public class onMessageSent implements Listener {
         else if (isPlayerInGroup(p,"helper")) {
             color = "&b";
             group = "Helper";
-        }
-        else if (isPlayerInGroup(p,"collaborator")) {
-            color = "&6";
-            group = "Collaborator";
         }
         else if (isPlayerInGroup(p,"booster")) {
             color = "&5";

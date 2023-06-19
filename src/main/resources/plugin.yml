@@ -1,37 +1,25 @@
-main: com.kryeit.Stuff
-version: 1.1
-authors: [MuriPlz,MrRedRhino]
-api-version: 1.18
+main: com.kryeit.LambdaStuff
+version: 1.0
+author: MuriPlz
+api-version: 1.20
 softdepend: [AFKPlus,GriefDefender]
-name: Stuff
+name: LambdaStuff
 commands:
-  vr:
-    description: Voting for my server rewards
   online:
     description: online players
     permission: stuff.online
   discord:
-    description: sends discord link
-  forum:
-    description: sends forum link
-  rules:
-    description: sends rules link
-  sendcoords:
-    description: sends your cords to the player
-    aliases:
-      - sharecoords
-  map:
-    description: shows bluemap url
-  vote:
-    description: sends planetminecraft link
-  kofi:
-    description: sends kofi link
-    aliases:
-      - donate
-  timeplayed:
-    description: shows time played
-  lastonline:
-    description: shows last time online
+    description: manda el link de discord
+  reglas:
+    description: manda el link de las reglas
+  mandarcoordenadas:
+    description: manda tus coordenadas a un jugador
+  mapa:
+    description: manda una url del mapa interactivo
+  tiempojugado:
+    description: enseña el tiempo jugado de un jugador
+  ultimaconexion:
+    description: enseña la última conexión
   fly:
     description: makes you fly
     permission: stuff.fly
@@ -41,5 +29,3 @@ commands:
   enderinvsee:
     description: gets a player enderchest
     permission: stuff.enderinvsee
-  buylight:
-    description: buys a light

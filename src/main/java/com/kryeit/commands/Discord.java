@@ -18,8 +18,8 @@ public class Discord implements CommandExecutor {
             return false;
         }
 
-        TextComponent message = new TextComponent(Utils.color("Discord -> &9&nhttps://discord.gg/5zQ8RVEzvw"));
-        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/5zQ8RVEzvw"));
+        TextComponent message = new TextComponent(Utils.color("Discord -> &9&nhttps://discord.gg/uTdf8WyrP7"));
+        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/uTdf8WyrP7"));
         player.spigot().sendMessage(message);
         return true;
     }

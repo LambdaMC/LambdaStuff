@@ -2,8 +2,8 @@ package com.kryeit;
 
 import com.kryeit.Listener.*;
 import com.kryeit.commands.*;
+import com.kryeit.commands.Mapa;
 import com.kryeit.tab.BasicPlayerTab;
-import com.kryeit.tab.BuyLightTab;
 import com.kryeit.tab.PlayerTab;
 import com.kryeit.tab.ReturnEmptyTab;
 import net.lapismc.afkplus.api.AFKPlusPlayerAPI;
@@ -12,17 +12,13 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
-public class Stuff extends JavaPlugin {
+public class LambdaStuff extends JavaPlugin {
 
     public static AFKPlusPlayerAPI afkPlusPlayerAPI = new AFKPlusPlayerAPI();
     public final List<UUID> sentTrapped = new ArrayList<>();
-    public static Stuff instance;
-    public final List<UUID> warned = new ArrayList<>();
+    public static LambdaStuff instance;
     public final List<UUID> flyEnabled = new ArrayList<>();
     public final List<String> offlinePlayers = new ArrayList<>();
 
@@ -36,29 +32,20 @@ public class Stuff extends JavaPlugin {
         registerEvent(new onBlockPlace());
         registerEvent(new onBlockInteract());
         registerEvent(new onWeatherChange());
-        registerEvent(new onInvInteract());
-        registerEvent(new onItemPickUp());
-        registerEvent(new onEndermanTake());
-        registerEvent(new onChickenEgg());
-
-        Objects.requireNonNull(getCommand("vr")).setExecutor(new VotingReward());
+        registerEvent(new onDeath());
 
         registerBasicCommand("online", new Online());
         registerBasicCommand("discord", new Discord());
-        registerBasicCommand("forum", new Forum());
-        registerBasicCommand("rules", new Rules());
-        registerBasicCommand("map", new Map());
-        registerBasicCommand("vote", new Vote());
-        registerBasicCommand("kofi", new KoFi());
+        registerBasicCommand("reglas", new Reglas());
+        registerBasicCommand("mapa", new Mapa());
         registerBasicCommand("fly", new Fly());
 
         registerCommand("invsee", new InvSee(), new BasicPlayerTab());
         registerCommand("enderinvsee", new EnderInvSee(), new BasicPlayerTab());
-        registerCommand("sendcoords", new SendCoords(), new BasicPlayerTab());
-        registerCommand("timeplayed", new TimePlayed(), new BasicPlayerTab());
-        registerCommand("buylight", new BuyLight(), new BuyLightTab());
+        registerCommand("mandarcoordenadas", new MandarCoordenadas(), new BasicPlayerTab());
+        registerCommand("tiempojugado", new TiempoJugado(), new BasicPlayerTab());
 
-        registerCommand("lastonline", new LastOnline(), new PlayerTab());
+        registerCommand("ultimaconexion", new UltimaConexion(), new PlayerTab());
 
     }
 
@@ -81,7 +68,7 @@ public class Stuff extends JavaPlugin {
     public void onDisable() {
     }
 
-    public static Stuff getInstance() {
+    public static LambdaStuff getInstance() {
         return instance;
     }
 }

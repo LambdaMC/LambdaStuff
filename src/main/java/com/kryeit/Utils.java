@@ -26,16 +26,6 @@ public class Utils {
         return player.hasPermission("group." + group);
     }
 
-    public static void transferAllClaimsToMe(Player p) {
-        List<Claim> claims= GriefDefender.getCore().getAllPlayerClaims(p.getUniqueId());
-        ClaimGroup claimGroup = ClaimGroup.builder().description(Component.text(p.getName() + "'s claims")).name(p.getName()).build();
-        for (Claim claim : claims) {
-            claim.transferOwner(UUID.fromString("c637c833-8821-42a8-9c0f-28a3c62d4017"));
-            claim.getData().setClaimGroupUniqueId(claimGroup.getUniqueId());
-        }
-        broadcast("All claims have been transferred successfully");
-    }
-
     public static void broadcast(String message) {
         Bukkit.broadcastMessage(color(message));
     }
@@ -57,34 +47,34 @@ public class Utils {
         StringBuilder time = new StringBuilder();
         if (years > 0) {
             if (years == 1) {
-                time.append(years).append(" year ");
+                time.append(years).append(" año ");
             } else {
-                time.append(years).append(" years ");
+                time.append(years).append(" años ");
             }
         }
         if (months > 0) {
             if (months == 1) {
-                time.append(months).append(" month ");
+                time.append(months).append(" mes ");
             } else {
-                time.append(months).append(" months ");
+                time.append(months).append(" meses ");
             }
         }
         if (days > 0) {
             if (days == 1) {
-                time.append(days).append(" day ");
+                time.append(days).append(" día ");
             } else {
-                time.append(days).append(" days ");
+                time.append(days).append(" días ");
             }
         }
         if (hours > 0) {
             if (hours == 1) {
-                time.append(hours).append(" hour ");
+                time.append(hours).append(" hora ");
             } else {
-                time.append(hours).append(" hours ");
+                time.append(hours).append(" horas ");
             }
         }
         if (years == 0 && months == 0 && days == 0 && hours == 0) {
-            return "less than an hour";
+            return "menos de una hora";
         }
         return time.toString();
 
@@ -111,15 +101,15 @@ public class Utils {
                 - TimeUnit.HOURS.toSeconds(hours) - TimeUnit.DAYS.toSeconds(days));
 
         if (days != 0) {
-            return days + " &6days &f" + hours + " &6hours &f" + minutes + " &6minutes &f" + seconds + " &6seconds&f";
+            return days + " &6días &f" + hours + " &6horas &f" + minutes + " &6minutos &f" + seconds + " &6segundos&f";
         } else {
             if (hours != 0) {
-                return hours + " &6hours &f" + minutes + " &6minutes &f" + seconds + " &6seconds&f";
+                return hours + " &6horas &f" + minutes + " &6minutos &f" + seconds + " &6segundos&f";
             } else {
                 if (minutes != 0) {
-                    return minutes + " &6minutes &f" + seconds + " &6seconds&f";
+                    return minutes + " &6minutos &f" + seconds + " &6segundos&f";
                 } else {
-                    return seconds + " &6seconds&f";
+                    return seconds + " &6segundos&f";
                 }
             }
 

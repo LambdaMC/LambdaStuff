@@ -14,19 +14,16 @@ public class onJoin implements Listener {
 
         Player p = e.getPlayer();
 
-        if(p.hasPermission("group.kryeitor")) {
-            p.setPlayerListName(Utils.color("&6&l⚙ &r" + p.getName()));
-        }
-
         if (p.hasPlayedBefore()) return;
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (player.getName().equals(p.getName())) {
-                p.sendMessage(Utils.color("&bWelcome to Kryeit! see /rules and /posthelp for additional information."));
+                p.sendMessage(Utils.color("&bBienvenido a LambdaCraft! mira las /reglas y /posthelp para información adicional."));
+                p.sendMessage(Utils.color("&bPara la guía de protección: https://docs.griefdefender.com/ y para ver la GUI general /gd."));
                 continue;
             }
             player.sendMessage(Utils.color("&b" + p.getName()
-                    + " has joined Kryeit for the first time! Welcome!"));
+                    + " se ha unido a LambdaCraft por primera vez! Bienvenido!"));
         }
     }
 }

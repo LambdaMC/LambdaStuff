@@ -1,7 +1,7 @@
 package com.kryeit.tab;
 
 import com.griefdefender.api.GriefDefender;
-import com.kryeit.Stuff;
+import com.kryeit.LambdaStuff;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -24,7 +24,7 @@ public class PlayerTab implements TabCompleter {
             // Get the name of all online players and add it to allTabs
             Bukkit.getOnlinePlayers().forEach(p -> allTabs.add(p.getName()));
 
-            List <String> offlinePlayers = Stuff.getInstance().offlinePlayers;
+            List <String> offlinePlayers = LambdaStuff.getInstance().offlinePlayers;
 
             if (offlinePlayers.isEmpty()) {
                 for (OfflinePlayer offlinePlayer : Bukkit.getOfflinePlayers()) {

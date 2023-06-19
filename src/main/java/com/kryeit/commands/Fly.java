@@ -1,6 +1,6 @@
 package com.kryeit.commands;
 
-import com.kryeit.Stuff;
+import com.kryeit.LambdaStuff;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class Fly implements CommandExecutor {
 
-    List<UUID> flyEnabled = Stuff.getInstance().flyEnabled;
+    List<UUID> flyEnabled = LambdaStuff.getInstance().flyEnabled;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
