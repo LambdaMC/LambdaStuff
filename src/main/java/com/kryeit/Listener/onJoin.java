@@ -18,7 +18,7 @@ public class onJoin implements Listener {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (player.getName().equals(p.getName())) {
-                p.sendMessage(Utils.color("&bBienvenido a LambdaCraft! mira las /reglas y /posthelp para información adicional."));
+                p.sendMessage(Utils.color("&bBienvenido a LambdaCraft! mira las /normas y /help para información adicional."));
                 p.sendMessage(Utils.color("&bPara la guía de protección: https://docs.griefdefender.com/ y para ver la GUI general /gd."));
                 p.sendMessage(Utils.color("&aPor favor, recuerda que NO tenemos nada que ver con el servidor de LandaCraft ni con sus administradores"));
                 continue;
