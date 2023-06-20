@@ -18,8 +18,8 @@ public class Reglas implements CommandExecutor {
             return false;
         }
 
-        TextComponent message = new TextComponent(Utils.color("Reglas -> &9&todavia nada loco"));
-        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "hay q hacerlas, somos unos vagos"));
+        TextComponent message = new TextComponent(Utils.color("Reglas -> &9&nhttps://discord.com/channels/1119257557245104202/1119277621696549086"));
+        message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.com/channels/1119257557245104202/1119277621696549086"));
         player.spigot().sendMessage(message);
         return true;
     }

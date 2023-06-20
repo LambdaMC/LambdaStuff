@@ -12,6 +12,7 @@ commands:
     description: manda el link de discord
   reglas:
     description: manda el link de las reglas
+    aliases: normas
   mandarcoordenadas:
     description: manda tus coordenadas a un jugador
   mapa:
