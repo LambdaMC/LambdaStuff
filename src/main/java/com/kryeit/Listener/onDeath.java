@@ -13,7 +13,7 @@ public class onDeath implements Listener {
     public void onPlayerDeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
         Location location = player.getLocation();
-        player.sendMessage(Utils.color("&7You've died on: (" +
+        player.sendMessage(Utils.color("&7Has muerto en: (" +
                 location.getBlockX() + ", " +
                 location.getBlockY() + ", " +
                 location.getBlockZ() + ")"));

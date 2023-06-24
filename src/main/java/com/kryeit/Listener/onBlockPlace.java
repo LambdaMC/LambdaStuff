@@ -43,7 +43,7 @@ public class onBlockPlace implements Listener {
             if (!p.getWorld().equals(pl.getWorld())) continue;
 
             if (p.getLocation().distance(e.getBlock().getLocation()) < 5 && p.getWorld().equals(pl.getWorld())) {
-                pl.sendMessage(Utils.color("&cYou cant place &6minecraft:"+ material.toLowerCase()+"&c near another player"));
+                pl.sendMessage(Utils.color("&cNo puedes usar &6minecraft:"+ material.toLowerCase()+"&c cerca de otros jugadores"));
                 e.setCancelled(true);
             }
 
