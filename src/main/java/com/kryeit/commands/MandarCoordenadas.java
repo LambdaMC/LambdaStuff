@@ -45,7 +45,7 @@ public class MandarCoordenadas implements CommandExecutor {
                 .event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Haz clic para ver en el BlueMap")
                         .color(ChatColor.LIGHT_PURPLE)
                         .create()))
-                .event(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://map.kryeit.com/#world:" + x
+                .event(new ClickEvent(ClickEvent.Action.OPEN_URL, "http://5.9.144.150:8100/#world:" + x
                         + ":" + y + ":" + z + ":198:0:0:0:0:perspective"))
                 .create();
 

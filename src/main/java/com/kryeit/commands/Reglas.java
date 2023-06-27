@@ -18,7 +18,7 @@ public class Reglas implements CommandExecutor {
             return false;
         }
 
-        TextComponent message = new TextComponent(Utils.color("Reglas -> &9&nhttps://discord.com/channels/1119257557245104202/1119277621696549086"));
+        TextComponent message = new TextComponent(Utils.color("Normas -> &9&nCanal de #normas de discord"));
         message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.com/channels/1119257557245104202/1119277621696549086"));
         player.spigot().sendMessage(message);
         return true;

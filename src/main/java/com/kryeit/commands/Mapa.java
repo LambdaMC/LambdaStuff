@@ -20,9 +20,9 @@ public class Mapa implements CommandExecutor {
 
         Location l = player.getLocation();
 
-        TextComponent message = new TextComponent(Utils.color("Bluemap -> &9&nhttps://map.kryeit.com/"));
+        TextComponent message = new TextComponent(Utils.color("Bluemap -> &9&nhttp://5.9.144.150:8100"));
         message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL,
-                "https://map.kryeit.com/#world:" +
+                "http://5.9.144.150:8100/#world:" +
                 l.getBlockX() + ":" + l.getBlockY() + ":" + l.getBlockZ() + ":" + l.getYaw() + ":" + l.getPitch() +
                 ":0:0:0:perspective"));
         player.spigot().sendMessage(message);
